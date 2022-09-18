@@ -72,6 +72,30 @@ Run contrastive_learn.py using following args:
     "--temperature_i", "0.005",
 ]
 ```
+For test, you can use the following args:
+```
+"program": "${workspaceFolder}/contrastive_learn.py",
+"args": [
+    "--do_test",
+    "--do_eval",
+    "--test_split",
+    "test",
+    "--num_captions_per_img_val",
+    "5",
+    "--eval_img_keys_file",
+    "test_img_keys_1k.tsv",
+    "--per_gpu_eval_batch_size",
+    "400",
+    "--img_feat_file",
+    "/raid/data_modal/coco_vinvL/model_0060000/features.tsv",
+    "--eval_model_dir",
+    "contrastive_checkpoint/twodataset_flickr/checkpoint-93-7600",
+    "--logit_gpu", "0",
+    "--contrastive_gpu", "0",
+    "--max_seq_length", "70",
+]
+```
+
 
 # Acknowledge
 This repo is modified based on the [VinVL](https://github.com/microsoft/Oscar), we thank the authors for sharing their project.
